@@ -4,6 +4,7 @@ std_msgs/Header header
 # Per-frame dimensions (num_chirps, num_samples, tdm_mimo) are in RadarFrame.
 
 # Identification
+string manufacturer              # e.g. "ti", "infineon"
 string device                    # e.g. "1843", "1843aop", "6843aop"
 string sdk_version               # e.g. "3.6.0"
 
