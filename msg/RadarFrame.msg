@@ -7,7 +7,7 @@ std_msgs/Header header
 #   num_samples = range dimension (ADC samples per chirp)
 #
 # TX/RX decomposition (needed for beamforming) is available from RadarInfo
-# on the /info topic (num_tx_antennas, num_rx_antennas fields).
+# on the /info topic (num_tx_active, num_rx_active, num_virtual_channels).
 
 uint16 num_chirps        # Doppler dimension
 uint16 num_rx            # spatial channels (virtual for MIMO)
