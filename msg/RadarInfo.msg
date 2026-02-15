@@ -20,6 +20,12 @@ float64 bandwidth_hz
 bool[] rx_mask
 bool[] tx_mask
 
+# Analog front-end (0.0 = not configured / not applicable)
+float64 tx_power_dbm              # TX conducted output power (dBm)
+float64 rx_gain_db                # total RX chain gain (dB)
+float64 hp_cutoff_hz              # high-pass filter cutoff (Hz)
+float64 lp_cutoff_hz              # low-pass / anti-aliasing filter cutoff (Hz)
+
 # On-board processing — all fields 0/false when onboard_enabled == false
 bool onboard_enabled                # true if on-chip detection is active
 float64 onboard_range_max          # max detection range (meters)
