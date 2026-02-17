@@ -42,6 +42,13 @@ float64 range_resolution_m           # c / (2 * bandwidth)
 float64 velocity_resolution_m_s      # lambda / (2 * n_chirps * chirp_cycle_time)
 float64 max_unambiguous_velocity_m_s # lambda / (4 * chirp_cycle_time)
 
+# Per-channel calibration (from compRangeBiasAndRxChanPhase or similar)
+float64 range_bias_m                 # range measurement bias (meters), 0.0 = uncalibrated
+float64[] rx_phase_bias              # per-virtual-channel phase/gain bias, Re/Im interleaved
+                                     # Length = 2 * n_tx * n_rx (pairs: Re0 Im0 Re1 Im1 ...)
+                                     # Order: TX0RX0, TX0RX1, ..., TX(N-1)RX(M-1)
+                                     # Empty = uncalibrated (identity assumed)
+
 # On-board processing (For TI boards) — all fields 0/false when onboard_enabled == false
 bool onboard_enabled                # true if on-chip detection is active
 float64 onboard_range_max          # max detection range (meters)
