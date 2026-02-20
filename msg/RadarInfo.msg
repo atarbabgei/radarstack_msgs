@@ -19,6 +19,7 @@ float64 bandwidth_hz
 float64 frequency_slope_hz_per_s # FMCW chirp slope (Hz/s)
 
 # Antenna masks (per-channel enable, e.g. [true, true, true, true])
+# num_rx_active/num_tx_active are used by subscribers (e.g. DSP) to detect config changes and re-initialize.
 bool[] rx_mask
 bool[] tx_mask
 uint8 num_rx_active               # number of enabled RX antennas (= sum of rx_mask)
@@ -26,7 +27,8 @@ uint8 num_tx_active               # number of enabled TX antennas (= sum of tx_m
 bool tdm_mimo                     # true = TDM-MIMO (TX channels time-multiplexed)
 uint16 num_virtual_channels       # effective spatial channels (tx*rx for TDM-MIMO, rx otherwise)
 
-# Radar cube dimensions (also in RadarFrame, included here for self-containedness)
+# Radar cube dimensions (also in RadarFrame, included here for self-containedness).
+# num_chirps/num_samples are used by subscribers (e.g. DSP) to detect config changes and re-initialize.
 uint16 num_chirps                 # Doppler dimension (loops for TDM-MIMO, total chirps otherwise)
 uint16 num_samples                # range dimension (ADC samples per chirp)
 
