@@ -12,8 +12,6 @@ find_package(std_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RadarFrame.msg"
-  "msg/RadarSpecifications.msg"
-  "msg/RadarConfig.msg"
   "msg/RadarInfo.msg"
   DEPENDENCIES std_msgs
 )
