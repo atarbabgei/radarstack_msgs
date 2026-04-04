@@ -16,7 +16,21 @@ uint8   num_rx            # Number of active RX antennas
 uint8   num_tx            # Number of active TX antennas
 bool[]  rx_mask           # Per-RX-channel enable mask
 bool[]  tx_mask           # Per-TX-channel enable mask
-bool    tdm_mimo          # True if TX channels are time-division multiplexed
+
+# MIMO mode
+uint8 mimo_mode
+uint8 MIMO_NONE = 0
+uint8 MIMO_TDM  = 1
+uint8 MIMO_BPM  = 2
+
+# Antenna geometry (lambda/2 grids, row-major, top row = highest elevation)
+# Cell values: -1 = empty, 0..N = antenna index
+# n_rows = len(grid) / grid_cols
+uint8   tx_grid_cols
+int8[]  tx_grid
+uint8   rx_grid_cols
+int8[]  rx_grid
+uint8[] chirp_order        # Maps chirp slot index to TX antenna index
 
 # Virtual array geometry (per element, TX-major order, half-wavelength positions)
 # Empty arrays = assume ULA along azimuth (positions 0..N-1, single elevation row)
